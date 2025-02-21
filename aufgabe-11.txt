@@ -1,0 +1,13 @@
+Git log Befehlsexperimente:
+
+1. Nur die letzten 3 Commits mit Statistiken anzeigen:
+   git log -3 --stat
+   Anwendungsfall: Schneller Überblick über aktuelle Änderungen mit Auswirkungen auf Dateien
+
+2. Commits anzeigen, die eine bestimmte Datei betreffen, mit detaillierten Änderungen:
+   git log --name-only --patch -- bar.txt
+   Anwendungsfall: Nachverfolgung der Entwicklung einer spezifischen Datei
+
+3. Commit-Historie in einem kompakten einzeiligen Format mit Graph anzeigen:
+   git log --pretty=format:"%h %ad %an: %s" --date=short --graph
+   Anwendungsfall: Visuelle Übersicht der Projekthistorie für Team-Präsentationen

@@ -1,0 +1,16 @@
+1. Löschen von Dateien mit rm vs git rm:
+   - Bei Verwendung von `rm bar.txt`: git status zeigt die Datei als gelöscht (D) an, aber nicht als gestaged
+   - Bei Verwendung von `git rm bar.txt`: git status zeigt die Datei als gelöscht (D) und bereits gestaged an
+
+2. Befehle zum Wiederherstellen des Ursprungszustands:
+   - Für die mit rm gelöschte Datei: `git checkout -- bar.txt`
+   - Für die mit git rm gelöschte Datei: `git reset HEAD bar.txt` gefolgt von `git checkout -- bar.txt`
+
+3. Umbenennen von Dateien mit mv vs git mv:
+   - Bei Verwendung von `mv bar.txt bar2.txt`: git status zeigt bar.txt als gelöscht und bar2.txt als untracked an
+   - Bei Verwendung von `git mv bar.txt bar2.txt`: git status zeigt dies als umbenannte Datei (R) an
+   
+   Die git mv Variante ist vorzuziehen, weil:
+   - Sie die Dateihistorie bewahrt (git erkennt, dass es sich um dieselbe Datei mit neuem Namen handelt)
+   - Sie die Änderung automatisch im Staging-Bereich vormerkt
+   - Die Umbenennung in der Versionsgeschichte besser nachvollziehbar ist
